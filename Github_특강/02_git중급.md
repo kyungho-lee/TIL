@@ -14,7 +14,9 @@ git을 이용해서 협업시 발생하는 comflict를 해결하고 branch관리
 
 ### 4. Comflict
 
-### 5. Merge Request
+### 5. Reset 
+
+### 6. Pull Request
 
 __________
 
@@ -93,20 +95,49 @@ Remote 혹은 현재 로컬에 있는 프로젝트를 git설정을 포함해서 
 
 - 순서
 
+  1. Branch 생성 - 가지치기 : aaa/aaa 뎁스를 만든다.
+  2. check out : 앞에 O표시와 Bold로 표시되는 곳이 내가 위치한 타임라인
+  3. 소스트리에서 explorer를 선택한 후 해당폴더에서 오른쪽클릭 open the code를 선택해서 VSC를 활성화한다.
+  4. 코드 혹은 문서를 수정후 저장
+  5. Add → commit 
+  6. 브랜치에서 작업이 끝난 후 브랜치상태로 푸시한다.(계속수정시)
+  7. 작업이 완료되면 master로 체크아웃후 Merge를 한다.
+  8. 작업완료된 branch는 제거한다. remote/본인이 생성한 branch 정기적으로 삭제해야한다.
+
+  ----
+
+  ※ 실제 실무에서 Master를 직접작업하는 경우는 거의 없음 항상 브랜치를 생성해서 작업후 Pull을 통해서 최신상태로 유지하고 work day에 일과를 마무리할때 Push를 하는것을 몸에 익혀야 한다. Push도 자주하는것이 아니라 최종 제출시 최소횟수로 진행한다.  
+
 ## 4. Comflict
 
 ### 충돌
 
 Remote로 접속할때 스냅샷의 싱크가 맞지 않은 상태
 
-예상시나리오)
+항상 `Remote Repository`와 싱크를 맞추기위해 Pull을 한뒤에 작업하는 습관을 가진다.
 
-1. 협업 생성
-2. 작업시 다른 파일을 서로 Push 하는 경우 (Pull → Push)
-3. 같은 파일을 서로 작업하는 경우
-4. 
+### case1 (commit)
 
+1. `remote Pull` 받기전에 `Commit`할 내용이 있으면 에러
+2. `commit`을 완료후 `Pull`을 받은 후 작업하면 해결
 
+### case2 (Pull)
 
-## 5. Merge Request
+1. Pull할때 동일한 파일이 서로 충돌이 난 경우
+2. 각 작업파일별로 `VSC`를 사용해서 수정된 내용을 찾아서 변경해서 해결한다.
 
+### 5. Reset
+
+작업중 되돌리기를 할때 사용하는 프로세스로 복구하는 위치에 따라 soft/mixed/hard로 나뉜다.
+
+![image-20191218174015832](02_git중급.assets/image-20191218174015832.png)
+
+- soft reset : commit 이전 stage에 올라간상태
+- mixted reset : stage에 add하기 전 상태
+- hard reset : 스냅샷찍기 이전상태
+
+## 6. Pull Request
+
+- 작업한 파일을 remote로 자신의 `fork/repo.`에 `push`를 한 다음 `pull request`를 요청한다. 
+- code review 나 리퀘스트 수락하고 contributors로 등록이 되면 work flow에 참여가 가능하다.
+- 실제 오픈소스 프로젝트에서 다양한 기여자들이 있으며 글로벌기업에서는 중요한 경력사항으로 인정해주고 있다.
