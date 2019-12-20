@@ -16,7 +16,7 @@
    - 나무가 예쁘면 = 분기
    - 크리스마스트리 = 나무 (- 저장)
 
-# code
+## code
 
 ```python
 # while 문 과 변수
@@ -213,4 +213,75 @@ search_input.send_keys(Keys.RETURN) # 입력후 검색어작동
 
 
 
+
+# Telegram chat bot
+
+## 준비
+
+1. project Init (폴더생성/소스트리/리모드Repo/.gitignore)
+2. Telegram web 가입
+3. app.py 파일생성
+4. Telegram bot생성
+   1. BotFather /start/newbot
+   2. botname(unique)_bot : 생성완료시 
+   3. get Token HTTP API : 카피
+5. 브라우저 https://api.telegram.org/bot<token>/getMe 접속해서 링크확인
+6. setwebhook을 통해서 챗봇과 로컬 호스트 연결
+
+
+
+## code
+
+
+
+SetWebhook : 
+
+![image-20191220145027761](03_python기초.assets/image-20191220145027761.png)
+
+# NGROK 세팅
+
+로컬서비스를 호스팅 포스트를 생성
+
+※ 재시작시 주소가 변경되므로 끄지않고 사용하며 꺼졌을때는 새로 생성된 주소를 https://api.telegram.org/bot909658793:AAEm9LgZxV63kZN5FSC2BcCEmQ9752cDZ8k/setwebhook?url=**<https://0ff6c5c5.ngrok.io>**'/chatbot 확인
+
+## 준비
+
+1. ngrok 다운로드
+
+2. 압축풀기 (exe파일실행)
+
+   1. cmd -> ngrok http 5000 (port)
+
+   2. >
+
+# 파파고 번역API 탑재하기
+
+## 준비
+
+1. 네이버 Develop 센터에 로그인 /인증/
+2. 파파고 API
+   1. client id, client secret 발급
+3. .env 에 등록후 사용
+4. url ="https://openapi.naver.com/v1/papago/n2mt"
+
+## code
+
+
+
+# Pythonanywhere 등록
+
+## 준비
+
+1. 가입
+2. web 선택
+3. add a new web app
+   1. Flask
+   2. python 3.8
+4. 주소생성
+5. 코드입력 (filesa->mysite->flask_app.py)
+6. 모듈설치 (consoles->bash-> pip3 install python-decouple --user) - .env를 사용하기 위한 모듈
+
+```python
+
+```
 
